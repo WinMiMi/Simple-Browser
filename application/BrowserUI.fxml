@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BrowserController">
+   <top>
+      <StackPane prefHeight="62.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="62.0" prefWidth="800.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="8.0" layoutY="15.0" onMouseClicked="#processBack" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/left.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="50.0" layoutY="15.0" onMouseClicked="#processForward" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/right-arrow%20(1).png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="101.0" layoutY="15.0" onMouseClicked="#processReload" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/refresh.png" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="tfURL" layoutX="166.0" layoutY="11.0" onKeyPressed="#processURL" prefHeight="40.0" prefWidth="500.0" promptText="Type a URL" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #525FE1;">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="689.0" layoutY="15.0" onMouseClicked="#processZoomIn" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/zoom-in.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="732.0" layoutY="15.0" onMouseClicked="#processZoomOut" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/zoom-out.png" />
+                     </image>
+                  </ImageView>
+                  <Separator prefWidth="200.0" />
+               </children>
+            </AnchorPane>
+            <ProgressBar fx:id="loadingbar" prefHeight="10.0" prefWidth="800.0" progress="0.0" StackPane.alignment="TOP_LEFT" />
+         </children>
+      </StackPane>
+   </top>
+   <center>
+      <WebView fx:id="webView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
